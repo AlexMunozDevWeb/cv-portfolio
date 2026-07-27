@@ -1,13 +1,13 @@
 import { BackgroundShader } from "@/components/background-shader";
 import { Header } from "@/components/header";
-// import { HeroSection } from "@/components/hero-section";
-// import { FormationSection } from "@/components/formation-section";
-// import { SkillsSection } from "@/components/skills-section";
-// import { ExperienceSection } from "@/components/experience-section";
-// import { ProjectsSection } from "@/components/projects-section";
-// import { ContactSection } from "@/components/contact-section";
-// import { DesignTokensSection } from "@/components/design-tokens-section";
-// import { Footer } from "@/components/footer";
+import { HeroSection } from "@/components/hero-section";
+import { FormationSection } from "@/components/formation-section";
+import { SkillsSection } from "@/components/skills-section";
+import { ExperienceSection } from "@/components/experience-section";
+import { ProjectsSection } from "@/components/projects-section";
+import { ContactSection } from "@/components/contact-section";
+import { DesignTokensSection } from "@/components/design-tokens-section";
+import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
@@ -20,17 +20,17 @@ export default function Home() {
 
       {/* Main Content Sections Container */}
       <main className="relative z-10 mx-auto max-w-7xl px-6 md:px-16">
-        {/* <HeroSection />
+        <HeroSection />
         <FormationSection />
         <SkillsSection />
         <ExperienceSection />
         <ProjectsSection />
         <ContactSection />
-        <DesignTokensSection /> */}
+        <DesignTokensSection />
       </main>
 
       {/* Footer */}
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
