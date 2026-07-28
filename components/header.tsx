@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useMemo } from "react";
 import {
   GraduationCap,
   Home,
@@ -10,38 +10,16 @@ import {
   FileText,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
 import { menuItems } from "@/data/db";
 import Link from "next/link";
+import { useScrollSpy } from "@/lib/hooks/use-scroll-spy";
 
 export function Header() {
-  const [activeSection, setActiveSection] = useState("hero");
-  const [scrolled, setScrolled] = useState(false);
-
-  const navItems = menuItems;
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-
-      const sections = navItems.map((item) => item.href.substring(1));
-      let current = "hero";
-
-      for (const section of sections) {
-        const el = document.getElementById(section);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= 200) {
-            current = section;
-          }
-        }
-      }
-      setActiveSection(current);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const sectionIds = useMemo(
+    () => menuItems.map((item) => item.href.substring(1)),
+    []
+  );
+  const { activeSection, scrolled } = useScrollSpy(sectionIds);
 
   return (
     <>
@@ -54,11 +32,9 @@ export function Header() {
         }`}
       >
         <nav className="mx-auto flex h-12 max-w-7xl items-center justify-between px-6 md:px-16">
-          {/* Logo / Monogram */}
-
           {/* Desktop Nav Items */}
           <div className="hidden items-center gap-6 md:flex lg:gap-8">
-            {navItems.map((item) => {
+            {menuItems.map((item) => {
               const sectionId = item.href.substring(1);
               const isActive = activeSection === sectionId;
               return (
@@ -108,7 +84,6 @@ export function Header() {
           <Home className="h-5 w-5" />
           <span className="font-mono text-[10px]">Inicio</span>
         </Link>
-
         <Link
           href="#formation"
           className={`flex flex-col items-center gap-1 ${
@@ -120,7 +95,6 @@ export function Header() {
           <GraduationCap className="h-5 w-5" />
           <span className="font-mono text-[10px]">Formación</span>
         </Link>
-
         <Link
           href="#skills"
           className={`flex flex-col items-center gap-1 ${
@@ -132,7 +106,6 @@ export function Header() {
           <Cpu className="h-5 w-5" />
           <span className="font-mono text-[10px]">Skills</span>
         </Link>
-
         <Link
           href="#projects"
           className={`flex flex-col items-center gap-1 ${
