@@ -1,4 +1,3 @@
-import { BackgroundShader } from "@/components/background-shader";
 import { Header } from "@/components/header";
 import { HeroSection } from "@/components/hero-section";
 import { FormationSection } from "@/components/formation-section";
@@ -12,20 +11,18 @@ import { Footer } from "@/components/footer";
 export default function Home() {
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
-      {/* Interactive WebGL Shader Canvas Background */}
-      <BackgroundShader />
-
       {/* Top Header & Navigation */}
       <Header />
 
       {/* Main Content Sections Container */}
       <main className="relative z-10 mx-auto max-w-7xl px-6 md:px-16">
         <HeroSection />
+        <ExperienceSection />
         <FormationSection />
         <SkillsSection />
-        <ExperienceSection />
         <ProjectsSection />
         <ContactSection />
+
         <DesignTokensSection />
       </main>
 
