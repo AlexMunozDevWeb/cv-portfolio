@@ -7,3 +7,11 @@ export type MenuItem = {
 export type bioParagraph = {
   paragraph: string;
 };
+
+export type Experience = {
+  period: string;
+  role: string;
+  company: string;
+  description: string;
+  tags: string[];
+};

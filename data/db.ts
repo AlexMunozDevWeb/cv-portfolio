@@ -1,4 +1,4 @@
-import type { MenuItem, bioParagraph } from "../types/";
+import type { MenuItem, bioParagraph, Experience } from "../types/";
 
 export const menuItems: MenuItem[] = [
   { id: 1, label: "Inicio", href: "#hero" },
@@ -32,5 +32,57 @@ export const bioParagraphs: bioParagraph[] = [
   {
     paragraph:
       "Fuera del trabajo, suelo disfrutar jugando al pádel o entrenando en el gimnasio.",
+  },
+];
+
+export const experiences: Experience[] = [
+  {
+    period: "Nov. 2022 — PRESENTE",
+    role: "Full Stack Developer",
+    company: "UNIVERSAE",
+    description:
+      "Mantenimiento y mejora de la plataforma educativa, implementación de nuevas funcionalidades, integraciones con herramientas de terceros, desarrollo de pasarelas de pagos a medida, optimización del rendimiento y seguridad, soporte técnico y resolución de incidencias.",
+    tags: [
+      "WordPress",
+      "NEXT.JS",
+      "JavaScript",
+      "TypeScript",
+      "PostgreSQL",
+      "PHP",
+      "MySQL",
+      "API REST",
+      "Git",
+    ],
+  },
+  {
+    period: "Sept. 2021 — Sept. 2022",
+    role: "Full Stack Developer",
+    company: "Ankaa Studio",
+    description:
+      "Desarrollo de temas a medida con WordPress y programación de CRM con CodeIgniter.",
+    tags: [
+      "WordPress",
+      "CodeIgniter",
+      "PHP",
+      "JavaScript",
+      "jQuery",
+      "LESS",
+      "Git",
+    ],
+  },
+  {
+    period: "Jun. 2021 — Sept. 2021",
+    role: "Back-end Developer",
+    company: "Makedit",
+    description: "Desarrollo web con Laravel.",
+    tags: ["Laravel", "PHP", "JavaScript", "jQuery", "SCSS", "Git"],
+  },
+  {
+    period: "Abril 2013 — Junio 2013",
+    role: "Becario Adm. de sistemas",
+    company: "Hefame",
+    description:
+      "Montaje servidor SUSE y de la nube para el intercambio de datos dentro de la empresa. Solventar incidencias de usuarios por VPN",
+    tags: ["Adm. Sistemas", "Ubuntu", "Active Directory"],
   },
 ];

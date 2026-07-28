@@ -3,6 +3,7 @@
 import { useMemo } from "react";
 import {
   GraduationCap,
+  BriefcaseBusiness,
   Home,
   Briefcase,
   Cpu,
@@ -83,6 +84,17 @@ export function Header() {
         >
           <Home className="h-5 w-5" />
           <span className="font-mono text-[10px]">Inicio</span>
+        </Link>
+        <Link
+          href="#experience"
+          className={`flex flex-col items-center gap-1 ${
+            activeSection === "experience"
+              ? "text-primary"
+              : "text-on-surface-variant"
+          }`}
+        >
+          <BriefcaseBusiness className="h-5 w-5" />
+          <span className="font-mono text-[10px]">Experiencia</span>
         </Link>
         <Link
           href="#formation"

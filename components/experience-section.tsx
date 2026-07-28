@@ -1,38 +1,7 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
-
-const experiences = [
-  {
-    period: "2023 — PRESENT",
-    role: "Senior Software Engineer",
-    company: "Vercel",
-    description:
-      "Lead engineering efforts for Edge Functions performance optimization and runtime execution. Collaborated with infrastructure teams to reduce cold-start latency by 40% globally.",
-    tags: ["RUST", "NEXT.JS", "WEBASSEMBLY", "EDGE COMPUTING"],
-    link: "https://vercel.com",
-  },
-  {
-    period: "2021 — 2023",
-    role: "Frontend Engineer",
-    company: "Linear",
-    description:
-      "Developed core features for the desktop application, focusing on keyboard-first navigation, offline synchronization using CRDTs, and sub-10ms UI interaction rendering.",
-    tags: ["TYPESCRIPT", "REACT", "ELECTRON", "WEBSOCKETS"],
-    link: "https://linear.app",
-  },
-  {
-    period: "2020 — 2021",
-    role: "Systems Engineering Intern",
-    company: "HashiCorp",
-    description:
-      "Engineered Terraform plugin provider validation suites and optimized Nomad job scheduling telemetry collection routines across high-density clusters.",
-    tags: ["GO", "TERRAFORM", "NOMAD", "DISTRIBUTED LOGGING"],
-    link: "https://hashicorp.com",
-  },
-];
+import { experiences } from "../data/db";
 
 export function ExperienceSection() {
   return (
@@ -45,10 +14,10 @@ export function ExperienceSection() {
         <div className="md:w-1/3">
           <div className="sticky top-28">
             <h3 className="text-3xl font-bold tracking-tight text-text-primary">
-              Professional Experience
+              Experiencia
             </h3>
             <p className="mt-2 font-mono text-xs tracking-widest text-text-muted uppercase">
-              CAREER TRAJECTORY & IMPACT
+              EXPERIENCIA PROFESIONAL
             </p>
           </div>
         </div>
@@ -71,17 +40,11 @@ export function ExperienceSection() {
 
               {/* Content */}
               <div className="space-y-2 md:w-3/4">
-                <a
-                  href={exp.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-lg font-bold text-text-primary transition-colors group-hover:text-primary focus:outline-none"
-                >
+                <div className="inline-flex items-center gap-1.5 text-lg font-bold text-text-primary transition-colors group-hover:text-primary focus:outline-none">
                   <span>
                     {exp.role} · {exp.company}
                   </span>
-                  <ArrowUpRight className="h-4 w-4 text-text-muted transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary" />
-                </a>
+                </div>
 
                 <p className="font-sans text-sm leading-relaxed text-on-surface-variant/80">
                   {exp.description}
