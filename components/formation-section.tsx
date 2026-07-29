@@ -1,38 +1,7 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
-import { GraduationCap, Code, Award } from "lucide-react";
-
-const formationData = [
-  {
-    period: "2018 — 2022",
-    title: "B.Sc. Software Engineering",
-    institution: "Massachusetts Institute of Technology (MIT)",
-    description:
-      "Focused on Distributed Systems, High-Performance Computing, and Human-Computer Interaction. Graduated with Honors.",
-    icon: GraduationCap,
-    active: true,
-  },
-  {
-    period: "2021",
-    title: "Open Source Contributor",
-    institution: "React & Developer Tooling Ecosystem",
-    description:
-      "Early contributions to React core concurrency primitives, state-management RFCs, and open-source CLI utilities.",
-    icon: Code,
-    active: false,
-  },
-  {
-    period: "2020",
-    title: "ACM Collegiate Programming Finalist",
-    institution: "ACM ICPC Regional Championship",
-    description:
-      "Ranked in top 1% for algorithmic optimization, graph theory, and dynamic data structure design under strict time constraints.",
-    icon: Award,
-    active: false,
-  },
-];
+import { formationData } from "@/data/db";
 
 export function FormationSection() {
   return (
@@ -45,10 +14,10 @@ export function FormationSection() {
         <div className="md:w-1/3">
           <div className="sticky top-28 space-y-2">
             <h3 className="text-3xl font-bold tracking-tight text-text-primary">
-              Formation
+              Formación
             </h3>
             <p className="font-mono text-xs tracking-widest text-text-muted uppercase">
-              ACADEMIC & EARLY CAREER
+              Formación académica
             </p>
           </div>
         </div>
@@ -90,9 +59,17 @@ export function FormationSection() {
                   {item.institution}
                 </p>
 
-                <p className="mt-2 text-sm leading-relaxed text-text-muted">
-                  {item.description}
-                </p>
+                <ul className="mt-3 space-y-1.5">
+                  {item.description.map((line) => (
+                    <li
+                      key={line}
+                      className="flex items-start gap-2 font-mono text-sm text-text-muted"
+                    >
+                      <span className="mt-0.5 shrink-0 text-primary">&gt;</span>
+                      {line}
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             );
           })}

@@ -15,3 +15,14 @@ export type Experience = {
   description: string;
   tags: string[];
 };
+
+export type Formation = {
+  period: string;
+  title: string;
+  institution: string;
+  description: string[];
+  icon: LucideIcon;
+  active: boolean;
+};
+
+type LucideIcon = React.ComponentType<{ className?: string }>;

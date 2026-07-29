@@ -1,4 +1,5 @@
-import type { MenuItem, bioParagraph, Experience } from "../types/";
+import { GraduationCap } from "lucide-react";
+import type { MenuItem, bioParagraph, Experience, Formation } from "../types/";
 
 export const menuItems: MenuItem[] = [
   { id: 1, label: "Inicio", href: "#hero" },
@@ -84,5 +85,24 @@ export const experiences: Experience[] = [
     description:
       "Montaje servidor SUSE y de la nube para el intercambio de datos dentro de la empresa. Solventar incidencias de usuarios por VPN",
     tags: ["Adm. Sistemas", "Ubuntu", "Active Directory"],
+  },
+];
+
+export const formationData: Formation[] = [
+  {
+    period: "Septiembre 2011 — Junio 2013",
+    title: "Grado Superio en Administración de Sistemas Informáticos y Redes",
+    institution: "I.E.S. José Luis Castillo Puche",
+    description: [
+      "Programación web con HTML, CSS, PHP Y Java.",
+      "Administración y gestión de bases de datos relacionales mediante SQL.",
+      "Configuración y administración de servicios de red: DNS, FTP, correo electrónico y routing",
+      "Instalación, configuración y mantenimiento de servidores Windows y Linux.",
+      "Administración de sistemas operativos, gestión de usuarios, permisos y políticas de seguridad.",
+      "Gestión de redes, virtualización y resolución de incidencias técnicas.",
+      "Automatización de tareas básicas y administración de infraestructuras informáticas.",
+    ],
+    icon: GraduationCap,
+    active: true,
   },
 ];
