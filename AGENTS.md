@@ -25,10 +25,13 @@ Portfolio personal de Alex Muñoz — sitio web estático con secciones de hero,
 
 ## Estructura del proyecto
 
-- `app/` — Router pages de Next.js (App Router). Contiene `layout.tsx`, `page.tsx` y `globals.css`
-- `components/` — Componentes React de secciones del portfolio (hero, projects, skills, etc.)
-- `components/ui/` — Componentes UI reutilizables con CVA (button, card, input, textarea)
-- `lib/` — Utilidades y helpers (función `cn()` para combinar clases de Tailwind)
+- `src/app/` — Router pages de Next.js (App Router). Contiene `layout.tsx`, `page.tsx` y `globals.css`
+- `src/components/` — Componentes React de secciones del portfolio (hero, projects, skills, etc.)
+- `src/components/ui/` — Componentes UI reutilizables con CVA (button, card, input, textarea)
+- `src/lib/` — Utilidades y helpers (función `cn()` para combinar clases de Tailwind)
+- `src/data/` — Datos estáticos del portfolio
+- `src/config/` — Configuraciones de la aplicación
+- `src/types/` — Tipos TypeScript compartidos
 - `public/` — Archivos estáticos (imágenes, iconos)
 - `.husky/` — Git hooks (pre-commit ejecuta lint-staged)
 

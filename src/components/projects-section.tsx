@@ -14,14 +14,14 @@ export function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="border-t border-outline-variant/20 py-12 md:py-24"
+      className="border-outline-variant/20 border-t py-12 md:py-24"
     >
       <div className="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
         <div>
-          <h3 className="text-3xl font-bold tracking-tight text-text-primary">
+          <h3 className="text-text-primary text-3xl font-bold tracking-tight">
             {sectionLabels.projects.title}
           </h3>
-          <p className="mt-2 font-mono text-xs tracking-widest text-text-muted uppercase">
+          <p className="text-text-muted mt-2 font-mono text-xs uppercase tracking-widest">
             {sectionLabels.projects.subtitle}
           </p>
         </div>
@@ -37,9 +37,9 @@ export function ProjectsSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.15 }}
           >
-            <Card className="group relative flex h-full flex-col overflow-hidden bg-surface-elevated hover:border-primary/50">
+            <Card className="bg-surface-elevated hover:border-primary/50 group relative flex h-full flex-col overflow-hidden">
               {/* Image Preview Container */}
-              <div className="relative aspect-video w-full overflow-hidden bg-surface-container-low">
+              <div className="bg-surface-container-low relative aspect-video w-full overflow-hidden">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -47,12 +47,12 @@ export function ProjectsSection() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover opacity-80 grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-surface-elevated via-transparent to-transparent opacity-90" />
+                <div className="from-surface-elevated absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-90" />
                 <a
                   href={project.demoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute top-4 right-4 rounded-full border border-outline-variant/30 bg-surface-container-high/80 p-2 text-primary opacity-0 backdrop-blur-md transition-opacity group-hover:opacity-100 hover:bg-primary hover:text-white"
+                  className="border-outline-variant/30 bg-surface-container-high/80 text-primary hover:bg-primary absolute right-4 top-4 rounded-full border p-2 opacity-0 backdrop-blur-md transition-opacity hover:text-white group-hover:opacity-100"
                 >
                   <ExternalLink className="h-4 w-4" />
                 </a>
@@ -65,12 +65,12 @@ export function ProjectsSection() {
                     href={project.demoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mb-3 flex items-center gap-2 text-2xl font-bold text-text-primary transition-colors hover:text-primary"
+                    className="text-text-primary hover:text-primary mb-3 flex items-center gap-2 text-2xl font-bold transition-colors"
                   >
                     {project.title}
                     <ExternalLink className="h-4 w-4 shrink-0 opacity-0 transition-opacity group-hover:opacity-100" />
                   </a>
-                  <p className="mb-6 font-sans text-sm leading-relaxed text-on-surface-variant/80">
+                  <p className="text-on-surface-variant/80 mb-6 font-sans text-sm leading-relaxed">
                     {project.description}
                   </p>
                 </div>
@@ -81,7 +81,7 @@ export function ProjectsSection() {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded border border-outline-variant/30 bg-surface-container px-2.5 py-0.5 font-mono text-[11px] text-primary"
+                        className="border-outline-variant/30 bg-surface-container text-primary rounded border px-2.5 py-0.5 font-mono text-[11px]"
                       >
                         {tag}
                       </span>
@@ -100,7 +100,7 @@ export function ProjectsSection() {
           href={sectionLabels.projects.archiveUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="group inline-flex items-center gap-2 font-mono text-sm text-primary hover:underline focus:outline-none"
+          className="text-primary group inline-flex items-center gap-2 font-mono text-sm hover:underline focus:outline-none"
         >
           <span>{sectionLabels.projects.archiveLink}</span>
           <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

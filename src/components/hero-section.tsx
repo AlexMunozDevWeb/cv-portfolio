@@ -9,26 +9,26 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="pt:16 relative flex min-h-[85vh] flex-col items-start justify-center pt-12 pb-12 md:pt-28"
+      className="pt:16 relative flex min-h-[85vh] flex-col items-start justify-center pb-12 pt-12 md:pt-28"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="max-100 space-y-6 md:grid md:grid-cols-2 md:space-y-0 md:gap-x-12 md:gap-y-6"
+        className="max-100 space-y-6 md:grid md:grid-cols-2 md:gap-x-12 md:gap-y-6 md:space-y-0"
       >
         {/* Left column: badge + title */}
         <div className="space-y-3 md:space-y-6">
-          <div className="inline-flex items-center gap-2 rounded-full border border-outline-variant/30 bg-surface-container px-3 py-1.5 font-mono text-xs tracking-widest text-primary">
+          <div className="border-outline-variant/30 bg-surface-container text-primary inline-flex items-center gap-2 rounded-full border px-3 py-1.5 font-mono text-xs tracking-widest">
             <Terminal className="h-3.5 w-3.5" />
             <span>{hero.title}</span>
           </div>
 
           <div className="space-y-2">
-            <h1 className="text-5xl leading-tight font-extrabold tracking-tight text-text-primary md:text-7xl">
+            <h1 className="text-text-primary text-5xl font-extrabold leading-tight tracking-tight md:text-7xl">
               {hero.name}
             </h1>
-            <h2 className="text-xl font-bold tracking-tight text-on-surface-variant/90 md:text-xl">
+            <h2 className="text-on-surface-variant/90 text-xl font-bold tracking-tight md:text-xl">
               {hero.job}
             </h2>
           </div>
@@ -65,7 +65,7 @@ export function HeroSection() {
           </motion.div>
 
           {/* Status badge */}
-          <div className="flex items-center gap-4 pt-8 font-mono text-xs text-text-muted opacity-60 md:col-span-2">
+          <div className="text-text-muted flex items-center gap-4 pt-8 font-mono text-xs opacity-60 md:col-span-2">
             <span>{hero.availability}</span>
             <span className="h-2 w-2 animate-ping rounded-full bg-emerald-400" />
           </div>
@@ -76,7 +76,7 @@ export function HeroSection() {
           {bioParagraphs.map((text, i) => (
             <p
               key={i}
-              className="mb-4 font-sans text-base leading-relaxed text-on-surface-variant/80 md:text-lg"
+              className="text-on-surface-variant/80 mb-4 font-sans text-base leading-relaxed md:text-lg"
             >
               {text.paragraph}
             </p>
