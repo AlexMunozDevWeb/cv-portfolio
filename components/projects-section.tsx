@@ -1,56 +1,13 @@
 "use client";
 
-import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+
+import { Card } from "@/components/ui/card";
+import { projects } from "@/data/db";
+
 import { motion } from "framer-motion";
 import { ExternalLink, Star, GitFork, ChevronRight } from "lucide-react";
-import { Card } from "@/components/ui/card";
-
-const projects = [
-  {
-    title: "Aether OS",
-    description:
-      "A conceptual desktop environment built entirely in WebGL & Rust WebAssembly, exploring new paradigms of spatial organization and 3D window management.",
-    stars: "12.4k",
-    forks: "820",
-    image:
-      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop",
-    tags: ["WebGL", "Rust", "WebAssembly", "TypeScript"],
-    demoUrl: "#",
-  },
-  {
-    title: "Prism Core",
-    description:
-      "Low-level benchmarking suite for modern JavaScript runtimes, providing micro-second precision profiling, V8 bytecode analysis, and memory leak tracing.",
-    stars: "4.1k",
-    forks: "150",
-    image:
-      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1000&auto=format&fit=crop",
-    tags: ["C++", "V8", "TypeScript", "CLI"],
-    demoUrl: "#",
-  },
-  {
-    title: "HyperGrid DB",
-    description:
-      "Distributed, in-memory key-value engine with automatic raft-consensus partitioning and sub-millisecond query execution speeds under heavy concurrency.",
-    stars: "2.9k",
-    forks: "95",
-    image:
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop",
-    tags: ["Go", "Raft", "Distributed Systems", "gRPC"],
-    demoUrl: "#",
-  },
-  {
-    title: "Chrono Vector",
-    description:
-      "High-throughput event streaming visualization framework built for real-time telemetry rendering at 120 FPS using WebGPU.",
-    stars: "1.8k",
-    forks: "64",
-    image:
-      "https://images.unsplash.com/photo-1509228468518-180dd4864904?q=80&w=1000&auto=format&fit=crop",
-    tags: ["WebGPU", "React", "Tailwind CSS", "Shaders"],
-    demoUrl: "#",
-  },
-];
 
 export function ProjectsSection() {
   return (
@@ -58,10 +15,10 @@ export function ProjectsSection() {
       <div className="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
         <div>
           <h3 className="text-3xl font-bold tracking-tight text-text-primary">
-            Selected Projects
+            Proyectos destacados
           </h3>
           <p className="mt-2 font-mono text-xs tracking-widest text-text-muted uppercase">
-            OPEN SOURCE & ARCHITECTURAL LABS
+            Desarrollo de aplicaciones y soluciones
           </p>
         </div>
       </div>
@@ -79,23 +36,36 @@ export function ProjectsSection() {
             <Card className="group relative flex h-full flex-col overflow-hidden bg-surface-elevated hover:border-primary/50">
               {/* Image Preview Container */}
               <div className="relative aspect-video w-full overflow-hidden bg-surface-container-low">
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
-                  className="h-full w-full object-cover opacity-80 grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover opacity-80 grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-surface-elevated via-transparent to-transparent opacity-90" />
-                <div className="absolute top-4 right-4 rounded-full border border-outline-variant/30 bg-surface-container-high/80 p-2 text-primary opacity-0 backdrop-blur-md transition-opacity group-hover:opacity-100">
+                <a
+                  href={project.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute top-4 right-4 rounded-full border border-outline-variant/30 bg-surface-container-high/80 p-2 text-primary opacity-0 backdrop-blur-md transition-opacity group-hover:opacity-100 hover:bg-primary hover:text-white"
+                >
                   <ExternalLink className="h-4 w-4" />
-                </div>
+                </a>
               </div>
 
               {/* Card Details */}
               <div className="flex flex-grow flex-col justify-between p-8">
                 <div>
-                  <h4 className="mb-3 flex items-center gap-2 text-2xl font-bold text-text-primary transition-colors group-hover:text-primary">
+                  <a
+                    href={project.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mb-3 flex items-center gap-2 text-2xl font-bold text-text-primary transition-colors hover:text-primary"
+                  >
                     {project.title}
-                  </h4>
+                    <ExternalLink className="h-4 w-4 shrink-0 opacity-0 transition-opacity group-hover:opacity-100" />
+                  </a>
                   <p className="mb-6 font-sans text-sm leading-relaxed text-on-surface-variant/80">
                     {project.description}
                   </p>
@@ -134,15 +104,15 @@ export function ProjectsSection() {
 
       {/* View Archive Link */}
       <div className="mt-12 text-center">
-        <a
-          href="https://github.com"
+        <Link
+          href="https://github.com/AlexMunozDevWeb/"
           target="_blank"
           rel="noopener noreferrer"
           className="group inline-flex items-center gap-2 font-mono text-sm text-primary hover:underline focus:outline-none"
         >
-          <span>VIEW FULL ARCHIVE ON GITHUB</span>
+          <span>Ver proyectos en GitHub</span>
           <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-        </a>
+        </Link>
       </div>
     </section>
   );

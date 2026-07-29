@@ -26,3 +26,11 @@ export type Formation = {
 };
 
 type LucideIcon = React.ComponentType<{ className?: string }>;
+
+export type Project = {
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  demoUrl: string;
+};

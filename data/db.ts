@@ -1,5 +1,11 @@
 import { GraduationCap } from "lucide-react";
-import type { MenuItem, bioParagraph, Experience, Formation } from "../types/";
+import type {
+  MenuItem,
+  bioParagraph,
+  Experience,
+  Formation,
+  Project,
+} from "../types/";
 
 export const menuItems: MenuItem[] = [
   { id: 1, label: "Inicio", href: "#hero" },
@@ -104,5 +110,98 @@ export const formationData: Formation[] = [
     ],
     icon: GraduationCap,
     active: true,
+  },
+];
+
+export const projects: Project[] = [
+  {
+    title: "Apex Padel Shop",
+    description:
+      "Tienda online de pádel con autenticación, carrito, PayPal, panel admin, PostgreSQL y arquitectura hexagonal/DDD.",
+    image: "/apex_padel.png",
+    tags: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "Next-Auth",
+      "PayPal",
+      "Cloudinary",
+      "Tailwind CSS",
+      "Zustand",
+      "Zod",
+      "Docker",
+      "Husky",
+    ],
+    demoUrl: "https://weather-react-tscript.netlify.app/",
+  },
+  {
+    title: "Weather APP ",
+    description:
+      "Dashboard del clima con OpenWeatherMap, pronóstico 5 días, calidad del aire, radar simulado, geolocalización y temas visuales.",
+    image: "/weather_app.png",
+    tags: [
+      "React 18",
+      "TypeScript",
+      "Vite 6",
+      "SWC",
+      "Zustand",
+      "Axios",
+      "Zod",
+      "Tailwind CSS",
+      "CSS Modules",
+      "lucide-react",
+      "ESLint",
+    ],
+    demoUrl: "https://weather-react-tscript.netlify.app/",
+  },
+  {
+    title: "Guitar Shop",
+    description:
+      "Tienda online de guitarras con carrito CRUD, notificaciones toast, persistencia localStorage y diseño responsive.",
+    image: "/guitar_shop.png",
+    tags: [
+      "React 18",
+      "JavaScript",
+      "Vite",
+      "SWC",
+      "Bootstrap 5",
+      "react-toastify",
+      "ESLint",
+    ],
+    demoUrl: "https://react-guitar.netlify.app/",
+  },
+  {
+    title: "Calculadora de propinas",
+    description:
+      "POS para restaurante que calcula propinas, gestiona órdenes, menú interactivo con búsqueda y filtros, modo oscuro.",
+    image: "/calculadora_de_propinas.png",
+    tags: [
+      "React 18",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "ESLint",
+      "SWC",
+      "MaterialSymbols",
+    ],
+    demoUrl: "https://calculadora-propinas-tailwind-react.netlify.app/",
+  },
+  {
+    title: "TODO list",
+    description:
+      "App de tareas con modo oscuro/claro, filtros por estado, persistencia localStorage y diseño responsive.",
+    image: "/TODO_list.png",
+    tags: [
+      "React 18",
+      "JavaScript",
+      "Vite",
+      "SWC",
+      "styled-components",
+      "ESLint",
+      "uuidv4",
+    ],
+    demoUrl: "https://todo-task-app-io.netlify.app/",
   },
 ];
