@@ -1,22 +1,15 @@
 "use client";
 
 import { useMemo } from "react";
-import {
-  GraduationCap,
-  BriefcaseBusiness,
-  Home,
-  Briefcase,
-  Mail,
-  FileText,
-} from "lucide-react";
+import { FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { menuItems } from "@/data/db";
+import { menuItems, headerLabels } from "@/data";
 import Link from "next/link";
 import { useScrollSpy } from "@/lib/hooks/use-scroll-spy";
 
 export function Header() {
   const sectionIds = useMemo(
-    () => menuItems.map((item) => item.href.substring(1)),
+    () => [...menuItems.map((item) => item.href.substring(1)), "contact"],
     []
   );
   const { activeSection, scrolled } = useScrollSpy(sectionIds);
@@ -65,7 +58,7 @@ export function Header() {
               className="flex items-center gap-2"
             >
               <FileText className="h-4 w-4" />
-              <span>Contacto</span>
+              <span>{headerLabels.contactButton}</span>
             </Button>
           </div>
         </nav>
@@ -73,61 +66,18 @@ export function Header() {
 
       {/* Mobile Bottom Navigation Bar*/}
       <nav className="fixed right-0 bottom-0 left-0 z-50 flex items-center justify-around border-t border-outline-variant/40 bg-surface-container-high/90 px-4 py-2 shadow-2xl backdrop-blur-lg md:hidden">
-        <Link
-          href="#hero"
-          className={`flex flex-col items-center gap-1 ${
-            activeSection === "hero"
-              ? "text-primary"
-              : "text-on-surface-variant"
-          }`}
-        >
-          <Home className="h-5 w-5" />
-          <span className="font-mono text-[10px]">Inicio</span>
-        </Link>
-        <Link
-          href="#experience"
-          className={`flex flex-col items-center gap-1 ${
-            activeSection === "experience"
-              ? "text-primary"
-              : "text-on-surface-variant"
-          }`}
-        >
-          <BriefcaseBusiness className="h-5 w-5" />
-          <span className="font-mono text-[10px]">Experiencia</span>
-        </Link>
-        <Link
-          href="#formation"
-          className={`flex flex-col items-center gap-1 ${
-            activeSection === "formation"
-              ? "text-primary"
-              : "text-on-surface-variant"
-          }`}
-        >
-          <GraduationCap className="h-5 w-5" />
-          <span className="font-mono text-[10px]">Formación</span>
-        </Link>
-        <Link
-          href="#projects"
-          className={`flex flex-col items-center gap-1 ${
-            activeSection === "projects"
-              ? "text-primary"
-              : "text-on-surface-variant"
-          }`}
-        >
-          <Briefcase className="h-5 w-5" />
-          <span className="font-mono text-[10px]">Projects</span>
-        </Link>
-        <Link
-          href="#contact"
-          className={`flex flex-col items-center gap-1 ${
-            activeSection === "contact"
-              ? "text-primary"
-              : "text-on-surface-variant"
-          }`}
-        >
-          <Mail className="h-5 w-5" />
-          <span className="font-mono text-[10px]">Contact</span>
-        </Link>
+        {headerLabels.nav.map(({ id, label, icon: Icon }) => (
+          <Link
+            key={id}
+            href={`#${id}`}
+            className={`flex flex-col items-center gap-1 ${
+              activeSection === id ? "text-primary" : "text-on-surface-variant"
+            }`}
+          >
+            <Icon className="h-5 w-5" />
+            <span className="font-mono text-[10px]">{label}</span>
+          </Link>
+        ))}
       </nav>
     </>
   );

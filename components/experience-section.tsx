@@ -1,23 +1,23 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { experiences } from "../data/db";
+import { experiences, sectionLabels } from "@/data";
 
 export function ExperienceSection() {
   return (
     <section
       id="experience"
-      className="border-t border-outline-variant/20 py-24"
+      className="border-t border-outline-variant/20 py-12 md:py-24"
     >
       <div className="flex flex-col gap-12 md:flex-row">
         {/* Sticky Sidebar Header */}
         <div className="md:w-1/3">
           <div className="sticky top-28">
             <h3 className="text-3xl font-bold tracking-tight text-text-primary">
-              Experiencia
+              {sectionLabels.experience.title}
             </h3>
             <p className="mt-2 font-mono text-xs tracking-widest text-text-muted uppercase">
-              EXPERIENCIA PROFESIONAL
+              {sectionLabels.experience.subtitle}
             </p>
           </div>
         </div>

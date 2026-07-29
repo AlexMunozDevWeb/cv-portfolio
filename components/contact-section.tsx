@@ -7,7 +7,10 @@ import { contact } from "@/data";
 
 export function ContactSection() {
   return (
-    <section id="contact" className="border-t border-outline-variant/20 py-24">
+    <section
+      id="contact"
+      className="border-t border-outline-variant/20 py-12 md:py-24"
+    >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

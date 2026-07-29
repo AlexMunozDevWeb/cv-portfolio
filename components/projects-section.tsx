@@ -4,21 +4,25 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Card } from "@/components/ui/card";
-import { projects } from "@/data/db";
+import { projects } from "@/data";
 
 import { motion } from "framer-motion";
 import { ExternalLink, ChevronRight } from "lucide-react";
+import { sectionLabels } from "@/data";
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="border-t border-outline-variant/20 py-24">
+    <section
+      id="projects"
+      className="border-t border-outline-variant/20 py-12 md:py-24"
+    >
       <div className="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
         <div>
           <h3 className="text-3xl font-bold tracking-tight text-text-primary">
-            Proyectos destacados
+            {sectionLabels.projects.title}
           </h3>
           <p className="mt-2 font-mono text-xs tracking-widest text-text-muted uppercase">
-            Desarrollo de aplicaciones y soluciones
+            {sectionLabels.projects.subtitle}
           </p>
         </div>
       </div>
@@ -93,12 +97,12 @@ export function ProjectsSection() {
       {/* View Archive Link */}
       <div className="mt-12 text-center">
         <Link
-          href="https://github.com/AlexMunozDevWeb/"
+          href={sectionLabels.projects.archiveUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="group inline-flex items-center gap-2 font-mono text-sm text-primary hover:underline focus:outline-none"
         >
-          <span>Ver proyectos en GitHub</span>
+          <span>{sectionLabels.projects.archiveLink}</span>
           <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
         </Link>
       </div>

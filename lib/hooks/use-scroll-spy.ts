@@ -21,10 +21,15 @@ export function useScrollSpy(
     const onScroll = () => {
       setScrolled(window.scrollY > scrollThreshold);
 
-      let current = "hero";
+      let current = sectionIds[0];
       for (const id of sectionIds) {
         const el = document.getElementById(id);
-        if (el && el.getBoundingClientRect().top <= offset) {
+        if (!el) continue;
+        const rect = el.getBoundingClientRect();
+        if (
+          rect.top <= offset ||
+          (rect.top < window.innerHeight && rect.bottom > 0)
+        ) {
           current = id;
         }
       }

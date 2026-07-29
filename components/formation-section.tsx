@@ -1,23 +1,23 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { formationData } from "@/data/db";
+import { formationData, sectionLabels } from "@/data";
 
 export function FormationSection() {
   return (
     <section
       id="formation"
-      className="border-t border-outline-variant/20 py-24"
+      className="border-t border-outline-variant/20 py-12 md:py-24"
     >
       <div className="flex flex-col gap-12 md:flex-row">
         {/* Sticky Header Column */}
         <div className="md:w-1/3">
           <div className="sticky top-28 space-y-2">
             <h3 className="text-3xl font-bold tracking-tight text-text-primary">
-              Formación
+              {sectionLabels.formation.title}
             </h3>
             <p className="font-mono text-xs tracking-widest text-text-muted uppercase">
-              Formación académica
+              {sectionLabels.formation.subtitle}
             </p>
           </div>
         </div>
