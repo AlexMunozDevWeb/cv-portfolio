@@ -3,13 +3,13 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Terminal } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { bioParagraphs } from "@/data/db";
+import { hero, bioParagraphs } from "@/data/";
 
 export function HeroSection() {
   return (
     <section
       id="hero"
-      className="pt:16 relative flex min-h-[85vh] flex-col items-start justify-center pb-16 md:pt-28"
+      className="pt:16 relative flex min-h-[85vh] flex-col items-start justify-center pt-12 pb-12 md:pt-28"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -21,15 +21,15 @@ export function HeroSection() {
         <div className="space-y-3 md:space-y-6">
           <div className="inline-flex items-center gap-2 rounded-full border border-outline-variant/30 bg-surface-container px-3 py-1.5 font-mono text-xs tracking-widest text-primary">
             <Terminal className="h-3.5 w-3.5" />
-            <span>PORTFOLIO</span>
+            <span>{hero.title}</span>
           </div>
 
           <div className="space-y-2">
             <h1 className="text-5xl leading-tight font-extrabold tracking-tight text-text-primary md:text-7xl">
-              Alex Muñoz
+              {hero.name}
             </h1>
             <h2 className="text-xl font-bold tracking-tight text-on-surface-variant/90 md:text-xl">
-              WordPress & Next.js Developer
+              {hero.job}
             </h2>
           </div>
           {/* CTAs */}
@@ -48,7 +48,7 @@ export function HeroSection() {
               }}
               className="group"
             >
-              <span>VER PROYECTOS</span>
+              <span>{hero.buttonProjects}</span>
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
 
@@ -60,13 +60,13 @@ export function HeroSection() {
                 el?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              <span>Contacto</span>
+              <span>{hero.buttonContact}</span>
             </Button>
           </motion.div>
 
           {/* Status badge */}
           <div className="flex items-center gap-4 pt-8 font-mono text-xs text-text-muted opacity-60 md:col-span-2">
-            <span>{"// DISPONIBLE PARA NUEVOS PROYECTOS"}</span>
+            <span>{hero.availability}</span>
             <span className="h-2 w-2 animate-ping rounded-full bg-emerald-400" />
           </div>
         </div>

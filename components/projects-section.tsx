@@ -7,7 +7,7 @@ import { Card } from "@/components/ui/card";
 import { projects } from "@/data/db";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Star, GitFork, ChevronRight } from "lucide-react";
+import { ExternalLink, ChevronRight } from "lucide-react";
 
 export function ProjectsSection() {
   return (
@@ -82,18 +82,6 @@ export function ProjectsSection() {
                         {tag}
                       </span>
                     ))}
-                  </div>
-
-                  {/* GitHub Metrics */}
-                  <div className="flex gap-6 border-t border-outline-variant/20 pt-4 font-mono text-xs text-text-muted">
-                    <span className="flex items-center gap-1.5">
-                      <Star className="h-3.5 w-3.5 text-primary" />
-                      {project.stars} stars
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                      <GitFork className="h-3.5 w-3.5 text-on-surface-variant" />
-                      {project.forks} forks
-                    </span>
                   </div>
                 </div>
               </div>

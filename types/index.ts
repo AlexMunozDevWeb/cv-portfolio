@@ -1,3 +1,5 @@
+import type { LucideIcon } from "lucide-react";
+
 export type MenuItem = {
   id: number;
   label: string;
@@ -24,8 +26,6 @@ export type Formation = {
   icon: LucideIcon;
   active: boolean;
 };
-
-type LucideIcon = React.ComponentType<{ className?: string }>;
 
 export type Project = {
   title: string;

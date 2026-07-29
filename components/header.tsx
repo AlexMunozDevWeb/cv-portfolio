@@ -6,7 +6,6 @@ import {
   BriefcaseBusiness,
   Home,
   Briefcase,
-  Cpu,
   Mail,
   FileText,
 } from "lucide-react";

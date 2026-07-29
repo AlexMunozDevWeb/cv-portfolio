@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import { inter, jetbrainsMono, spaceGrotesk } from "@/config/fonts";
+import { inter, jetbrainsMono } from "@/config/fonts";
 
 export const metadata: Metadata = {
   title: "Alex Muñoz | Desarrollador WordPress, React y Next.js",
@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`dark ${inter.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable} h-full antialiased`}
+      className={`dark ${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-background font-sans text-foreground selection:bg-primary/30 selection:text-primary">
         {children}
