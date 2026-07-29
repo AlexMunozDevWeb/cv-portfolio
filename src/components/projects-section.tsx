@@ -18,9 +18,9 @@ export function ProjectsSection() {
     >
       <div className="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
         <div>
-          <h3 className="text-text-primary text-3xl font-bold tracking-tight">
+          <h2 className="text-text-primary text-3xl font-bold tracking-tight">
             {sectionLabels.projects.title}
-          </h3>
+          </h2>
           <p className="text-text-muted mt-2 font-mono text-xs uppercase tracking-widest">
             {sectionLabels.projects.subtitle}
           </p>
@@ -52,7 +52,8 @@ export function ProjectsSection() {
                   href={project.demoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border-outline-variant/30 bg-surface-container-high/80 text-primary hover:bg-primary absolute right-4 top-4 rounded-full border p-2 opacity-0 backdrop-blur-md transition-opacity hover:text-white group-hover:opacity-100"
+                  className="border-outline-variant/30 bg-surface-container-high/80 text-primary hover:bg-primary absolute right-4 top-4 rounded-full border p-2 opacity-0 backdrop-blur-md transition-opacity hover:text-white group-hover:opacity-100 group-focus-visible:opacity-100"
+                  aria-label={`${project.title} (abrir en nueva ventana)`}
                 >
                   <ExternalLink className="h-4 w-4" />
                 </a>
@@ -65,6 +66,7 @@ export function ProjectsSection() {
                     href={project.demoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`${project.title} (abrir en nueva ventana)`}
                     className="text-text-primary hover:text-primary mb-3 flex items-center gap-2 text-2xl font-bold transition-colors"
                   >
                     {project.title}
@@ -100,7 +102,7 @@ export function ProjectsSection() {
           href={sectionLabels.projects.archiveUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-primary group inline-flex items-center gap-2 font-mono text-sm hover:underline focus:outline-none"
+          className="text-primary focus-visible:ring-primary group inline-flex items-center gap-2 rounded font-mono text-sm hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
         >
           <span>{sectionLabels.projects.archiveLink}</span>
           <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

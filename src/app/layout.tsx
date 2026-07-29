@@ -36,10 +36,16 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="es"
       className={`dark ${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="bg-background text-foreground selection:bg-primary/30 selection:text-primary flex min-h-full flex-col font-sans">
+        <a
+          href="#main"
+          className="bg-primary text-on-primary fixed left-0 top-0 z-[100] -translate-y-full rounded-br p-3 font-mono text-sm transition-transform focus:translate-y-0"
+        >
+          Saltar al contenido
+        </a>
         {children}
       </body>
     </html>

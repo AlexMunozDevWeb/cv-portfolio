@@ -19,9 +19,9 @@ export function ContactSection() {
         className="space-y-6"
       >
         <div>
-          <h3 className="text-text-primary text-3xl font-bold tracking-tight">
+          <h2 className="text-text-primary text-3xl font-bold tracking-tight">
             {contact.title}
-          </h3>
+          </h2>
         </div>
 
         <p className="text-on-surface-variant/80 max-w-md font-sans text-sm leading-relaxed">

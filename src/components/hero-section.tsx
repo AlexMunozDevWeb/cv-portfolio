@@ -1,8 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Terminal } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { hero, bioParagraphs } from "@/data/";
 
 export function HeroSection() {
@@ -39,29 +39,20 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-wrap gap-4 pt-6 md:col-span-2"
           >
-            <Button
-              variant="primary"
-              size="md"
-              onClick={() => {
-                const el = document.getElementById("projects");
-                el?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="group"
+            <Link
+              href="#projects"
+              className="from-primary to-primary-container text-on-primary focus-visible:ring-primary inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r px-6 py-3 font-mono text-sm font-bold transition-all hover:opacity-95 hover:shadow-[0_0_20px_rgba(76,215,246,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-[0.98]"
             >
               <span>{hero.buttonProjects}</span>
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
+            </Link>
 
-            <Button
-              variant="secondary"
-              size="md"
-              onClick={() => {
-                const el = document.getElementById("contact");
-                el?.scrollIntoView({ behavior: "smooth" });
-              }}
+            <Link
+              href="#contact"
+              className="border-primary text-primary hover:bg-primary/10 focus-visible:ring-primary inline-flex items-center justify-center gap-2 rounded-lg border px-6 py-3 font-mono text-sm font-medium transition-all hover:shadow-[0_0_15px_rgba(76,215,246,0.15)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-[0.98]"
             >
               <span>{hero.buttonContact}</span>
-            </Button>
+            </Link>
           </motion.div>
 
           {/* Status badge */}

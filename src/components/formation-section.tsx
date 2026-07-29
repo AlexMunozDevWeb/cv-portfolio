@@ -13,9 +13,9 @@ export function FormationSection() {
         {/* Sticky Header Column */}
         <div className="md:w-1/3">
           <div className="sticky top-28 space-y-2">
-            <h3 className="text-text-primary text-3xl font-bold tracking-tight">
+            <h2 className="text-text-primary text-3xl font-bold tracking-tight">
               {sectionLabels.formation.title}
-            </h3>
+            </h2>
             <p className="text-text-muted font-mono text-xs uppercase tracking-widest">
               {sectionLabels.formation.subtitle}
             </p>
@@ -51,9 +51,9 @@ export function FormationSection() {
                   <IconComp className="text-text-muted h-4 w-4" />
                 </div>
 
-                <h4 className="text-text-primary group-hover:text-primary mt-1 text-xl font-bold transition-colors">
+                <h3 className="text-text-primary group-hover:text-primary mt-1 text-xl font-bold transition-colors">
                   {item.title}
-                </h4>
+                </h3>
 
                 <p className="text-on-surface-variant/80 mt-1 font-mono text-sm">
                   {item.institution}
@@ -65,7 +65,12 @@ export function FormationSection() {
                       key={line}
                       className="text-text-muted flex items-start gap-2 font-mono text-sm"
                     >
-                      <span className="text-primary mt-0.5 shrink-0">&gt;</span>
+                      <span
+                        className="text-primary mt-0.5 shrink-0"
+                        aria-hidden="true"
+                      >
+                        &gt;
+                      </span>
                       {line}
                     </li>
                   ))}

@@ -13,9 +13,9 @@ export function ExperienceSection() {
         {/* Sticky Sidebar Header */}
         <div className="md:w-1/3">
           <div className="sticky top-28">
-            <h3 className="text-text-primary text-3xl font-bold tracking-tight">
+            <h2 className="text-text-primary text-3xl font-bold tracking-tight">
               {sectionLabels.experience.title}
-            </h3>
+            </h2>
             <p className="text-text-muted mt-2 font-mono text-xs uppercase tracking-widest">
               {sectionLabels.experience.subtitle}
             </p>

@@ -13,7 +13,7 @@ export default function Home() {
       <Header />
 
       {/* Main Content Sections Container */}
-      <main className="relative z-10 mx-auto max-w-7xl px-6 md:px-16">
+      <main id="main" className="relative z-10 mx-auto max-w-7xl px-6 md:px-16">
         <HeroSection />
         <ExperienceSection />
         <FormationSection />

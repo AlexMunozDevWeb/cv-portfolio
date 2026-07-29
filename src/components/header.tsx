@@ -24,7 +24,10 @@ export function Header() {
             : "bg-transparent py-5"
         }`}
       >
-        <nav className="mx-auto flex h-12 max-w-7xl items-center justify-between px-6 md:px-16">
+        <nav
+          aria-label="Navegación principal"
+          className="mx-auto flex h-12 max-w-7xl items-center justify-between px-6 md:px-16"
+        >
           {/* Desktop Nav Items */}
           <div className="hidden items-center gap-6 md:flex lg:gap-8">
             {menuItems.map((item) => {
@@ -34,6 +37,7 @@ export function Header() {
                 <Link
                   key={item.label}
                   href={item.href}
+                  aria-current={isActive ? "true" : undefined}
                   className={`relative py-1 font-mono text-xs tracking-wider transition-all duration-200 ${
                     isActive
                       ? "text-primary font-bold"
@@ -54,7 +58,10 @@ export function Header() {
             <Button
               variant="primary"
               size="sm"
-              onClick={() => window.open("#contact", "_self")}
+              onClick={() => {
+                const el = document.getElementById("contact");
+                el?.scrollIntoView({ behavior: "smooth" });
+              }}
               className="flex items-center gap-2"
             >
               <FileText className="h-4 w-4" />
@@ -65,11 +72,15 @@ export function Header() {
       </header>
 
       {/* Mobile Bottom Navigation Bar*/}
-      <nav className="border-outline-variant/40 bg-surface-container-high/90 fixed bottom-0 left-0 right-0 z-50 flex items-center justify-around border-t px-4 py-2 shadow-2xl backdrop-blur-lg md:hidden">
+      <nav
+        aria-label="Navegación móvil"
+        className="border-outline-variant/40 bg-surface-container-high/90 fixed bottom-0 left-0 right-0 z-50 flex items-center justify-around border-t px-4 py-2 shadow-2xl backdrop-blur-lg md:hidden"
+      >
         {headerLabels.nav.map(({ id, label, icon: Icon }) => (
           <Link
             key={id}
             href={`#${id}`}
+            aria-current={activeSection === id ? "true" : undefined}
             className={`flex flex-col items-center gap-1 ${
               activeSection === id ? "text-primary" : "text-on-surface-variant"
             }`}
