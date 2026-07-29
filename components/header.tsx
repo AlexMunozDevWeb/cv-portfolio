@@ -108,17 +108,6 @@ export function Header() {
           <span className="font-mono text-[10px]">Formación</span>
         </Link>
         <Link
-          href="#skills"
-          className={`flex flex-col items-center gap-1 ${
-            activeSection === "skills"
-              ? "text-primary"
-              : "text-on-surface-variant"
-          }`}
-        >
-          <Cpu className="h-5 w-5" />
-          <span className="font-mono text-[10px]">Skills</span>
-        </Link>
-        <Link
           href="#projects"
           className={`flex flex-col items-center gap-1 ${
             activeSection === "projects"
