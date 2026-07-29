@@ -1,43 +1,30 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
-  subsets: ["latin"],
-  display: "swap",
-});
+import { inter, jetbrainsMono, spaceGrotesk } from "@/config/fonts";
 
 export const metadata: Metadata = {
-  title: "Alex Muñoz | Software Engineer & Digital Architect",
+  title: "Alex Muñoz | Desarrollador WordPress, React y Next.js",
   description:
-    "Portfolio of Alex Muñoz - Architecting scalable digital systems, distributed microservices, and fluid web experiences with surgical precision.",
+    "Portfolio de Alex Muñoz, desarrollador Full Stack especializado en WordPress, React, Next.js y TypeScript. Creando aplicaciones web modernas, rápidas y escalables.",
   keywords: [
-    "Software Engineer",
-    "Full Stack Developer",
-    "Systems Architect",
+    "Alex Muñoz",
+    "Desarrollador Full Stack",
+    "Desarrollador Frontend",
+    "Desarrollador WordPress",
+    "React",
     "Next.js",
     "TypeScript",
-    "React",
-    "Web3",
+    "JavaScript",
+    "Tailwind CSS",
+    "Desarrollo Web",
+    "Portfolio",
   ],
   authors: [{ name: "Alex Muñoz" }],
   openGraph: {
-    title: "Alex Muñoz | Software Engineer",
+    title: "Alex Muñoz | Desarrollador Full Stack",
     description:
-      "Architecting scalable digital systems with surgical precision.",
+      "Portfolio con proyectos desarrollados en WordPress, React, Next.js y TypeScript. Creando experiencias web modernas, rápidas y escalables.",
     type: "website",
   },
 };
