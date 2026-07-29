@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# cv-portfolio
 
-## Getting Started
+Portfolio personal de **Alex Muñoz** — sitio web estático con secciones de hero, proyectos, skills, experiencia, formación y contacto. Diseño dark-mode con estética tech/futurista.
 
-First, run the development server:
+## Stack
+
+| Categoría     | Tecnologías                                    |
+| ------------- | ---------------------------------------------- |
+| Framework     | Next.js 16 (App Router) + React 19             |
+| Lenguaje      | TypeScript 5 (`strict: true`)                  |
+| CSS           | Tailwind CSS 4 (vía PostCSS)                   |
+| Animaciones   | Framer Motion                                  |
+| Iconos        | lucide-react                                   |
+| Fuentes       | Inter, JetBrains Mono (vía `next/font`)        |
+| Utilidades UI | class-variance-authority, clsx, tailwind-merge |
+| Formularios   | react-hook-form + Zod                          |
+| Git hooks     | Husky + lint-staged                            |
+| Commits       | Commitizen (conventional changelog)            |
+
+## Empezar
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abrir [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Comandos
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Comando        | Descripción                       |
+| -------------- | --------------------------------- |
+| `pnpm dev`     | Servidor de desarrollo            |
+| `pnpm build`   | Compilación para producción       |
+| `pnpm start`   | Servidor de producción            |
+| `pnpm lint`    | ESLint                            |
+| `pnpm format`  | Prettier                          |
+| `pnpm commit`  | Commit interactivo con Commitizen |
+| `pnpm prepare` | Inicializar Husky                 |
 
-## Learn More
+## Estructura
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/             # App Router (layout, page, globals.css)
+├── components/      # Componentes React del portfolio
+│   └── ui/          # Componentes UI reutilizables (Button, Card)
+├── config/          # Configuración de fuentes y app
+├── data/            # Datos estáticos del portfolio
+├── lib/             # Utilidades (cn, hooks)
+└── types/           # Tipos TypeScript compartidos
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Documentación técnica
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Ver [docs/technical.md](docs/technical.md).
