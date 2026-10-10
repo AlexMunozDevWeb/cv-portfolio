@@ -156,28 +156,28 @@ export const formationData: Formation[] = [
 ];
 
 export const projects: Project[] = [
-  // {
-  //   title: "Apex Padel Shop",
-  //   description:
-  //     "Tienda online de pádel con autenticación, carrito, PayPal, panel admin, PostgreSQL y arquitectura hexagonal/DDD.",
-  //   image: "/apex_padel.png",
-  //   tags: [
-  //     "Next.js 16",
-  //     "React 19",
-  //     "TypeScript",
-  //     "PostgreSQL",
-  //     "Prisma",
-  //     "Next-Auth",
-  //     "PayPal",
-  //     "Cloudinary",
-  //     "Tailwind CSS",
-  //     "Zustand",
-  //     "Zod",
-  //     "Docker",
-  //     "Husky",
-  //   ],
-  //   demoUrl: "https://weather-react-tscript.netlify.app/",
-  // },
+  {
+    title: "Apex Padel Shop",
+    description:
+      "Tienda online de pádel con autenticación, carrito, PayPal, panel admin, PostgreSQL y arquitectura hexagonal/DDD.",
+    image: "/apex_padel.png",
+    tags: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "Next-Auth",
+      "PayPal",
+      "Cloudinary",
+      "Tailwind CSS",
+      "Zustand",
+      "Zod",
+      "Docker",
+      "Husky",
+    ],
+    demoUrl: "https://next-shop-apex-padel.vercel.app/",
+  },
   {
     title: "Weather APP ",
     description:
