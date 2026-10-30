@@ -9,11 +9,10 @@ Portfolio personal de **Alex Muñoz** — sitio web estático con secciones de h
 | Framework     | Next.js 16 (App Router) + React 19             |
 | Lenguaje      | TypeScript 5 (`strict: true`)                  |
 | CSS           | Tailwind CSS 4 (vía PostCSS)                   |
-| Animaciones   | Framer Motion                                  |
+| Animaciones   | CSS animations                                 |
 | Iconos        | lucide-react                                   |
 | Fuentes       | Inter, JetBrains Mono (vía `next/font`)        |
 | Utilidades UI | class-variance-authority, clsx, tailwind-merge |
-| Formularios   | react-hook-form + Zod                          |
 | Git hooks     | Husky + lint-staged                            |
 | Commits       | Commitizen (conventional changelog)            |
 
@@ -54,3 +53,5 @@ src/
 ## Documentación técnica
 
 Ver [docs/technical.md](docs/technical.md).
+
+Configura `NEXT_PUBLIC_SITE_URL` usando `.env.template` para generar correctamente la URL canónica, el sitemap y los metadatos sociales en producción.

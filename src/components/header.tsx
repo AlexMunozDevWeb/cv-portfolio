@@ -1,17 +1,17 @@
 "use client";
 
-import { useMemo } from "react";
 import { FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { menuItems, headerLabels } from "@/data";
 import Link from "next/link";
 import { useScrollSpy } from "@/lib/hooks/use-scroll-spy";
 
+const sectionIds = [
+  ...menuItems.map((item) => item.href.substring(1)),
+  "contact",
+];
+
 export function Header() {
-  const sectionIds = useMemo(
-    () => [...menuItems.map((item) => item.href.substring(1)), "contact"],
-    []
-  );
   const { activeSection, scrolled } = useScrollSpy(sectionIds);
 
   return (

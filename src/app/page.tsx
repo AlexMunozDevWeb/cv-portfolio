@@ -8,7 +8,7 @@ import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
-    <div className="bg-background text-foreground relative min-h-screen overflow-x-hidden">
+    <div className="bg-background text-foreground relative min-h-screen overflow-x-clip">
       {/* Top Header & Navigation */}
       <Header />
 

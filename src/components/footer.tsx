@@ -5,10 +5,13 @@ import { footerData } from "@/data";
 
 export function Footer() {
   return (
-    <footer className="border-outline-variant/30 bg-background mb-16 mt-20 border-t py-12 md:mb-0">
+    <footer
+      aria-label="Pie de página"
+      className="border-outline-variant/30 bg-background mb-16 mt-20 border-t py-12 md:mb-0"
+    >
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 md:flex-row md:px-16">
         {/* Copyright / Info */}
-        <div className="text-on-surface text-text-muted font-mono text-xs">
+        <div className="text-text-muted font-mono text-xs">
           <p>{footerData.copyright}</p>
         </div>
 

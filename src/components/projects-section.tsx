@@ -1,12 +1,10 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
+import type { CSSProperties } from "react";
 
 import { Card } from "@/components/ui/card";
 import { projects } from "@/data";
 
-import { motion } from "framer-motion";
 import { ExternalLink, ChevronRight } from "lucide-react";
 import { sectionLabels } from "@/data";
 
@@ -14,11 +12,15 @@ export function ProjectsSection() {
   return (
     <section
       id="projects"
+      aria-labelledby="projects-title"
       className="border-outline-variant/20 border-t py-12 md:py-24"
     >
       <div className="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
         <div>
-          <h2 className="text-text-primary text-3xl font-bold tracking-tight">
+          <h2
+            id="projects-title"
+            className="text-text-primary text-3xl font-bold tracking-tight"
+          >
             {sectionLabels.projects.title}
           </h2>
           <p className="text-text-muted mt-2 font-mono text-xs uppercase tracking-widest">
@@ -30,19 +32,17 @@ export function ProjectsSection() {
       {/* Projects Grid */}
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         {projects.map((project, index) => (
-          <motion.div
+          <div
             key={project.title}
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.15 }}
+            style={{ "--animation-delay": `${index * 100}ms` } as CSSProperties}
+            className="animate-fade-in-up motion-reduce:animate-none"
           >
             <Card className="bg-surface-elevated hover:border-primary/50 group relative flex h-full flex-col overflow-hidden">
               {/* Image Preview Container */}
               <div className="bg-surface-container-low relative aspect-video w-full overflow-hidden">
                 <Image
                   src={project.image}
-                  alt={project.title}
+                  alt={project.imageAlt}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover opacity-80 grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
@@ -92,7 +92,7 @@ export function ProjectsSection() {
                 </div>
               </div>
             </Card>
-          </motion.div>
+          </div>
         ))}
       </div>
 

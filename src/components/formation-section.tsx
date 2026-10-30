@@ -1,19 +1,21 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { formationData, sectionLabels } from "@/data";
+import type { CSSProperties } from "react";
 
 export function FormationSection() {
   return (
     <section
       id="formation"
+      aria-labelledby="formation-title"
       className="border-outline-variant/20 border-t py-12 md:py-24"
     >
       <div className="flex flex-col gap-12 md:flex-row">
         {/* Sticky Header Column */}
         <div className="md:w-1/3">
           <div className="sticky top-28 space-y-2">
-            <h2 className="text-text-primary text-3xl font-bold tracking-tight">
+            <h2
+              id="formation-title"
+              className="text-text-primary text-3xl font-bold tracking-tight"
+            >
               {sectionLabels.formation.title}
             </h2>
             <p className="text-text-muted font-mono text-xs uppercase tracking-widest">
@@ -27,13 +29,12 @@ export function FormationSection() {
           {formationData.map((item, index) => {
             const IconComp = item.icon;
             return (
-              <motion.div
+              <article
                 key={item.title}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.15 }}
-                className="border-outline-variant/40 group relative border-l pl-8"
+                style={
+                  { "--animation-delay": `${index * 100}ms` } as CSSProperties
+                }
+                className="border-outline-variant/40 animate-fade-in-up group relative border-l pl-8 motion-reduce:animate-none"
               >
                 {/* Node marker */}
                 <div
@@ -75,7 +76,7 @@ export function FormationSection() {
                     </li>
                   ))}
                 </ul>
-              </motion.div>
+              </article>
             );
           })}
         </div>

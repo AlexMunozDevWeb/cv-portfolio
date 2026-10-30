@@ -6,7 +6,7 @@ export type MenuItem = {
   href: string;
 };
 
-export type bioParagraph = {
+export type BioParagraph = {
   paragraph: string;
 };
 
@@ -31,6 +31,7 @@ export type Project = {
   title: string;
   description: string;
   image: string;
+  imageAlt: string;
   tags: string[];
   demoUrl: string;
 };

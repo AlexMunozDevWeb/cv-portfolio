@@ -8,7 +8,7 @@ interface UseScrollSpyOptions {
 }
 
 export function useScrollSpy(
-  sectionIds: string[],
+  sectionIds: readonly string[],
   options: UseScrollSpyOptions = {}
 ) {
   const { offset = 200, scrollThreshold = 20 } = options;
@@ -18,26 +18,27 @@ export function useScrollSpy(
   );
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > scrollThreshold);
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((section): section is HTMLElement => section !== null);
+    const updateScrolled = () => setScrolled(window.scrollY > scrollThreshold);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visible[0]) setActiveSection(visible[0].target.id);
+      },
+      { rootMargin: `-${offset}px 0px -55% 0px`, threshold: 0 }
+    );
 
-      let current = sectionIds[0];
-      for (const id of sectionIds) {
-        const el = document.getElementById(id);
-        if (!el) continue;
-        const rect = el.getBoundingClientRect();
-        if (
-          rect.top <= offset ||
-          (rect.top < window.innerHeight && rect.bottom > 0)
-        ) {
-          current = id;
-        }
-      }
-      setActiveSection(current);
+    sections.forEach((section) => observer.observe(section));
+    updateScrolled();
+    window.addEventListener("scroll", updateScrolled, { passive: true });
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", updateScrolled);
     };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
   }, [sectionIds, offset, scrollThreshold]);
 
   return { activeSection, scrolled };

@@ -1,19 +1,21 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { experiences, sectionLabels } from "@/data";
+import type { CSSProperties } from "react";
 
 export function ExperienceSection() {
   return (
     <section
       id="experience"
+      aria-labelledby="experience-title"
       className="border-outline-variant/20 border-t py-12 md:py-24"
     >
       <div className="flex flex-col gap-12 md:flex-row">
         {/* Sticky Sidebar Header */}
         <div className="md:w-1/3">
           <div className="sticky top-28">
-            <h2 className="text-text-primary text-3xl font-bold tracking-tight">
+            <h2
+              id="experience-title"
+              className="text-text-primary text-3xl font-bold tracking-tight"
+            >
               {sectionLabels.experience.title}
             </h2>
             <p className="text-text-muted mt-2 font-mono text-xs uppercase tracking-widest">
@@ -25,13 +27,12 @@ export function ExperienceSection() {
         {/* Experience List */}
         <div className="space-y-6 md:w-2/3">
           {experiences.map((exp, index) => (
-            <motion.div
+            <article
               key={exp.company}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
-              className="hover:border-surface-border hover:bg-surface-elevated group -mx-6 flex flex-col gap-6 rounded-xl border border-transparent p-6 transition-all md:flex-row"
+              style={
+                { "--animation-delay": `${index * 100}ms` } as CSSProperties
+              }
+              className="animate-fade-in-up hover:border-surface-border hover:bg-surface-elevated group -mx-6 flex flex-col gap-6 rounded-xl border border-transparent p-6 transition-[background-color,border-color] motion-reduce:animate-none md:flex-row"
             >
               {/* Date */}
               <div className="text-text-muted pt-1 font-mono text-xs tracking-wider md:w-1/4">
@@ -62,7 +63,7 @@ export function ExperienceSection() {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </article>
           ))}
         </div>
       </div>

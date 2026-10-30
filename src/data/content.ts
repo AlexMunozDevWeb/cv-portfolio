@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import type {
   MenuItem,
-  bioParagraph,
+  BioParagraph,
   Experience,
   Formation,
   Project,
@@ -29,7 +29,7 @@ export const hero = {
   availability: "// DISPONIBLE PARA NUEVOS PROYECTOS",
 };
 
-export const bioParagraphs: bioParagraph[] = [
+export const bioParagraphs: BioParagraph[] = [
   {
     paragraph:
       "¡Hola! Soy desarrollador web especializado en crear soluciones digitales funcionales, escalables y fáciles de mantener. Cuento con más de 15 años de experiencia profesional y más de seis años dedicados al desarrollo web.",
@@ -79,8 +79,8 @@ export const headerLabels = {
     { id: "hero", label: "Inicio", icon: Home },
     { id: "experience", label: "Experiencia", icon: BriefcaseBusiness },
     { id: "formation", label: "Formación", icon: GraduationCap },
-    { id: "projects", label: "Projects", icon: Briefcase },
-    { id: "contact", label: "Contact", icon: Mail },
+    { id: "projects", label: "Proyectos", icon: Briefcase },
+    { id: "contact", label: "Contacto", icon: Mail },
   ],
 };
 
@@ -139,7 +139,7 @@ export const experiences: Experience[] = [
 export const formationData: Formation[] = [
   {
     period: "Septiembre 2011 — Junio 2013",
-    title: "Grado Superio en Administración de Sistemas Informáticos y Redes",
+    title: "Grado Superior en Administración de Sistemas Informáticos y Redes",
     institution: "I.E.S. José Luis Castillo Puche",
     description: [
       "Programación web con HTML, CSS, PHP Y Java.",
@@ -161,6 +161,7 @@ export const projects: Project[] = [
     description:
       "Tienda online de pádel con autenticación, carrito, PayPal, panel admin, PostgreSQL y arquitectura hexagonal/DDD.",
     image: "/apex_padel.png",
+    imageAlt: "Interfaz de la tienda online Apex Padel Shop",
     tags: [
       "Next.js 16",
       "React 19",
@@ -179,10 +180,11 @@ export const projects: Project[] = [
     demoUrl: "https://next-shop-apex-padel.vercel.app/",
   },
   {
-    title: "Weather APP ",
+    title: "Weather App",
     description:
       "Dashboard del clima con OpenWeatherMap, pronóstico 5 días, calidad del aire, radar simulado, geolocalización y temas visuales.",
     image: "/weather_app.png",
+    imageAlt: "Dashboard de la aplicación del tiempo Weather App",
     tags: [
       "React 18",
       "TypeScript",
@@ -203,6 +205,7 @@ export const projects: Project[] = [
     description:
       "Tienda online de guitarras con carrito CRUD, notificaciones toast, persistencia localStorage y diseño responsive.",
     image: "/guitar_shop.png",
+    imageAlt: "Catálogo de la tienda online Guitar Shop",
     tags: [
       "React 18",
       "JavaScript",
@@ -219,6 +222,7 @@ export const projects: Project[] = [
     description:
       "POS para restaurante que calcula propinas, gestiona órdenes, menú interactivo con búsqueda y filtros, modo oscuro.",
     image: "/calculadora_de_propinas.png",
+    imageAlt: "Interfaz de la calculadora de propinas para restaurantes",
     tags: [
       "React 18",
       "TypeScript",
@@ -235,6 +239,7 @@ export const projects: Project[] = [
     description:
       "App de tareas con modo oscuro/claro, filtros por estado, persistencia localStorage y diseño responsive.",
     image: "/TODO_list.png",
+    imageAlt: "Lista de tareas de la aplicación TODO list",
     tags: [
       "React 18",
       "JavaScript",

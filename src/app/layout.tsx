@@ -1,7 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 import { inter, jetbrainsMono } from "@/config/fonts";
+
+const siteUrl = new URL(
+  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
+);
 
 export const metadata: Metadata = {
   title: "Alex Muñoz | Desarrollador WordPress, React y Next.js",
@@ -21,12 +25,40 @@ export const metadata: Metadata = {
     "Portfolio",
   ],
   authors: [{ name: "Alex Muñoz" }],
+  metadataBase: siteUrl,
+  alternates: { canonical: "/" },
   openGraph: {
     title: "Alex Muñoz | Desarrollador Full Stack",
     description:
       "Portfolio con proyectos desarrollados en WordPress, React, Next.js y TypeScript. Creando experiencias web modernas, rápidas y escalables.",
     type: "website",
+    siteName: "Alex Muñoz Portfolio",
+    locale: "es_ES",
+    url: siteUrl.toString(),
+    images: [
+      {
+        url: "/apex_padel.png",
+        width: 1200,
+        height: 630,
+        alt: "Proyecto destacado de Alex Muñoz",
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Alex Muñoz | Desarrollador Full Stack",
+    description:
+      "Portfolio con proyectos desarrollados en WordPress, React, Next.js y TypeScript.",
+    images: ["/apex_padel.png"],
+  },
+  robots: { index: true, follow: true },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  colorScheme: "dark",
+  themeColor: "#0c1324",
 };
 
 export default function RootLayout({
