@@ -17,7 +17,7 @@
 
 ## 1. Arquitectura
 
-Aplicación **Single Page Application (SPA)** construida con Next.js 16 App Router en modo estático. Toda la lógica corre en el cliente (componentes marcados con `"use client"`), pero el build genera HTML estático gracias a que no hay datos dinámicos ni server components que dependan de request.
+Aplicación estática construida con Next.js 16 App Router. El contenido permanece en Server Components y solo el header usa `"use client"` para el estado de navegación y los efectos del navegador.
 
 ```
 src/
@@ -134,7 +134,7 @@ Cada sección del portfolio sigue la misma convención:
 
 - Archivo: `kebab-case-section.tsx`
 - Export: `PascalCaseSection`
-- Mark: `"use client"` (por el uso de Framer Motion)
+- Server Components por defecto; las animaciones de entrada se implementan con CSS.
 
 | Componente          | Sección              | Animación                          |
 | ------------------- | -------------------- | ---------------------------------- |
@@ -241,7 +241,7 @@ Definidos en `src/types/index.ts`:
 
 ```typescript
 MenuItem; // { id, label, href }
-bioParagraph; // { paragraph }
+BioParagraph; // { paragraph }
 Experience; // { period, role, company, description, tags }
 Formation; // { period, title, institution, description[], icon, active }
 Project; // { title, description, image, tags, demoUrl }
@@ -314,8 +314,8 @@ Configuración en `opencode.json` con skills personalizadas en `.opencode/skills
 
 ### Pendientes / mejoras futuras
 
-- Implementar `prefers-reduced-motion` también en animaciones de Framer Motion (hook `useReducedMotion`)
-- Añadir etiquetas ARIA a secciones (role="region" + aria-label)
+- Las animaciones CSS respetan `prefers-reduced-motion` globalmente.
+- Las secciones usan `aria-labelledby` y títulos asociados.
 - Evaluar contraste de colores con herramienta de medición exacta
 
 ---
@@ -332,10 +332,10 @@ Next.js genera **páginas estáticas** (SSG) en la carpeta `.next/`. No se neces
 
 ### Despliegue estático
 
-Para exportación 100% estática (opcional):
+Para exportación 100% estática (opcional), configura `output: "export"` en `next.config.ts` y ejecuta:
 
 ```bash
-next build && next export
+next build
 ```
 
 Genera una carpeta `out/` con HTML, CSS y JS listos para cualquier hosting estático (Netlify, Vercel, GitHub Pages).
@@ -346,4 +346,4 @@ No requiere variables de entorno para desarrollo o build. El archivo `.env.templ
 
 ---
 
-_Última actualización: Julio 2026_
+_Última actualización: Octubre 2026_
